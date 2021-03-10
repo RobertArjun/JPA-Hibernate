@@ -14,6 +14,7 @@ XML configuration file for JPA called persistence.xml, in order to tell Hibernat
 Under the src/main/resources folder, create a new folder named META-INF 
 
 persistence.xml
+
 		```<persistence version="2.2"
 			xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -36,7 +37,9 @@ persistence.xml
 		</persistence>```
 
 pom.xml
-			<dependencies>
+
+```
+	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -64,27 +67,27 @@ pom.xml
 			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
-  
+  ```
   # Ex: 2 ID & generated value
  1. GenerationType.IDENTITY
-	 @GeneratedValue(strategy = GenerationType.IDENTITY) 
-   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table
+	` @GeneratedValue(strategy = GenerationType.IDENTITY) 
+   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table`
 
 2. GenerationType.TABLE
- 	2.1 @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
+ 	`2.1 @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
 	key_generator is a table name so this table should have two column name such as
-	sequence_name and next_val so while executing the persist or save hibernate will automatically create the sequence
+	sequence_name and next_val so while executing the persist or save hibernate will automatically create the sequence`
   
-	2.2 @TableGenerator(name = "key_generator",
+	```2.2 @TableGenerator(name = "key_generator",
 	table = "key_generator", pkColumnName = "key_name", pkColumnValue = "product_sequence", valueColumnName = "key_value")
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
-	TableGenerator annotation is used to create custom table and custom column name
+	TableGenerator annotation is used to create custom table and custom column name```
 	
-  	2.3 @TableGenerator(name = "key_generator",
+  	```2.3 @TableGenerator(name = "key_generator",
 	table = "key_generator", pkColumnName = "key_name", pkColumnValue = "product_sequence",
 	valueColumnName = "key_value", allocationSize = 20)
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
- 	 allocationSize is ued for perfomance improvement
+ 	 allocationSize is ued for perfomance improvement```
   
   3. GenerationType.Sequence is only support Orcle
   
