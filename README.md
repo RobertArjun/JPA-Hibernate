@@ -36,7 +36,7 @@ persistence.xml
 </persistence>
 
 pom.xml
-<dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -67,10 +67,10 @@ pom.xml
   
   # Ex: 2 ID & generated value
  1. GenerationType.IDENTITY
-	 @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table
+		 @GeneratedValue(strategy = GenerationType.IDENTITY) 
+   		 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table
 
-2 GenerationType.TABLE
+2. GenerationType.TABLE
  	2.1 @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
 	key_generator is a table name so this table should have two column name such as
 	sequence_name and next_val so while executing the persist or save hibernate will automatically create the sequence
