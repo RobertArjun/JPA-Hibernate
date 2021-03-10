@@ -1,9 +1,9 @@
 # JPA-Hibernate
 JPA defines Java Persistence Query Language (JPQL) which is an object-oriented query language. The syntax of JPQL is similar to SQL but it operates against Java objects rather than directly with database tables.
 
-#####JPA is a specification, and Hibernate is one of its implementations
+##### JPA is a specification, and Hibernate is one of its implementations
 
-##Hibernate Framework:
+## Hibernate Framework:
 Hibernate is a popular Object Relational Mapping (ORM) framework that aims at simplifying database programming for developers.
 Hibernate was developed before JPA. And after JPA becomes a standard, Hibernate restructures itself to become an implementation of JPA.
 The Hibernate framework consists of several components: Hibernate ORM, Hibernate Search, Hibernate Validator, Hibernate CGM and Hibernate Tools.
@@ -70,24 +70,30 @@ Under the src/main/resources folder, create a new folder named META-INF
   ```
   # Ex: 2 ID & generated value
  1. GenerationType.IDENTITY
-	` @GeneratedValue(strategy = GenerationType.IDENTITY) 
-   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table `
+	``` @GeneratedValue(strategy = GenerationType.IDENTITY) 
+   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table ```
 
 2. GenerationType.TABLE
- 	` 2.1 @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
+ 	``` 
+	2.1 @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
 	key_generator is a table name so this table should have two column name such as
-	sequence_name and next_val so while executing the persist or save hibernate will automatically create the sequence `
+	sequence_name and next_val so while executing the persist or save hibernate will automatically create the sequence
+	```
   
-	``` 2.2 @TableGenerator(name = "key_generator",
+	```
+	2.2 @TableGenerator(name = "key_generator",
 	table = "key_generator", pkColumnName = "key_name", pkColumnValue = "product_sequence", valueColumnName = "key_value")
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
-	TableGenerator annotation is used to create custom table and custom column name ```
+	TableGenerator annotation is used to create custom table and custom column name 
+	```
 	
-  	``` 2.3 @TableGenerator(name = "key_generator",
+  	```
+	2.3 @TableGenerator(name = "key_generator",
 	table = "key_generator", pkColumnName = "key_name", pkColumnValue = "product_sequence",
 	valueColumnName = "key_value", allocationSize = 20)
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
- 	 allocationSize is ued for perfomance improvement ```
+ 	 allocationSize is ued for perfomance improvement 
+	 ```
   
   3. GenerationType.Sequence is only support Orcle
   
