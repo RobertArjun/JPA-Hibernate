@@ -14,29 +14,29 @@ XML configuration file for JPA called persistence.xml, in order to tell Hibernat
 Under the src/main/resources folder, create a new folder named META-INF 
 
 persistence.xml
-<persistence version="2.2"
-	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="my-persistence-unit"> <!-- Define factory class declaration -->
-		<description>JPA example</description>
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/jpadb" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password"
-				value="root" />
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.cj.jdbc.Driver" />
-		</properties>
-	</persistence-unit>
-</persistence>
+		<persistence version="2.2"
+			xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+			http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+			<persistence-unit name="my-persistence-unit"> <!-- Define factory class declaration -->
+				<description>JPA example</description>
+				<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+				<exclude-unlisted-classes>false</exclude-unlisted-classes>
+				<properties>
+					<property name="javax.persistence.jdbc.url"
+						value="jdbc:mysql://localhost:3306/jpadb" />
+					<property name="javax.persistence.jdbc.user" value="root" />
+					<property name="javax.persistence.jdbc.password"
+						value="root" />
+					<property name="javax.persistence.jdbc.driver"
+						value="com.mysql.cj.jdbc.Driver" />
+				</properties>
+			</persistence-unit>
+		</persistence>
 
 pom.xml
-	<dependencies>
+			<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -67,8 +67,8 @@ pom.xml
   
   # Ex: 2 ID & generated value
  1. GenerationType.IDENTITY
-		 @GeneratedValue(strategy = GenerationType.IDENTITY) 
-   		 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table
+	 @GeneratedValue(strategy = GenerationType.IDENTITY) 
+   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table
 
 2. GenerationType.TABLE
  	2.1 @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
