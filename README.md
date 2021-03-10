@@ -14,7 +14,7 @@ XML configuration file for JPA called persistence.xml, in order to tell Hibernat
 Under the src/main/resources folder, create a new folder named META-INF 
 
 persistence.xml
-		<persistence version="2.2"
+		`<persistence version="2.2"
 			xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
@@ -33,7 +33,7 @@ persistence.xml
 						value="com.mysql.cj.jdbc.Driver" />
 				</properties>
 			</persistence-unit>
-		</persistence>
+		</persistence>`
 
 pom.xml
 			<dependencies>
