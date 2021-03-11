@@ -68,10 +68,10 @@ Under the src/main/resources folder, create a new folder named META-INF
 		</dependency>
 	</dependencies>
   ```
-  # Ex: 2 ID & generated value
+  ## Ex: 2 ID & generated value
  1. GenerationType.IDENTITY
-	``` @GeneratedValue(strategy = GenerationType.IDENTITY) 
-   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table ```
+	``` @GeneratedValue(strategy = GenerationType.IDENTITY) ```
+   	 if table column is Auto increment then Identity strategy will automatically create the the id so Auto increment should be enable in the table 
 
 2. GenerationType.TABLE
  	``` 
